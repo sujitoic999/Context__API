@@ -24,7 +24,7 @@ const App = () => {
   const [state, dispatch] = useReducer(reducerFunction, {
     count: 0,
     name: "Sujit",
-  });
+  }); // here name and count will be key of state object
   return (
     <div>
       <myContext.Provider value={{ state, dispatch }}>

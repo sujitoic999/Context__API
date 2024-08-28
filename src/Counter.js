@@ -22,7 +22,7 @@ const Counter = () => {
         <br></br>
         <button
           onClick={() => {
-            dispatch({ type: "reset" });
+            dispatch({ type: "reset" }); // this object key will be a property of action object inside reducer function
           }}
         >
           Reset
