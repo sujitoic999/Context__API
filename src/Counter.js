@@ -6,15 +6,15 @@ const Counter = () => {
   return (
     <div>
       Counter: {state.count}
+      <br></br>
+      Name: {state.name}
       <div>
-        <button
-          onClick={() => dispatch({ type: "increment" })}
-        >
+        <button onClick={() => dispatch({ type: "increment" })}>
           Increment
         </button>
         <button
           onClick={() => {
-            dispatch({ type: "decrement" });
+            dispatch({ action: "decrement" }); // need to observe
           }}
         >
           Decrement
@@ -26,6 +26,13 @@ const Counter = () => {
           }}
         >
           Reset
+        </button>
+        <button
+          onClick={() => {
+            dispatch({ name: "update last name" });
+          }}
+        >
+          Name Reset
         </button>
       </div>
     </div>
