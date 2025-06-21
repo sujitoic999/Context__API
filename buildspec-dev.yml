@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - npm install
+  build:
+    commands:
+      - npm install env-cmd
+      - npm run build # uses .env.development by default
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: build

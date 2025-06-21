@@ -1,39 +1,35 @@
-import React, { useContext } from "react";
-import { myContext } from "./Mycontext";
+import React, { useContext, useState } from 'react';
+import { myContext } from './Mycontext';
+import config from './config';
 
 const Counter = () => {
-  const { state, dispatch } = useContext(myContext);
+  const [state, dispatch] = useContext(myContext);
+  console.log('REACT_APP_API_URL', process.env.REACT_APP_API_URL);
+  console.log('config.mode', config.mode);
+  console.log('config.apiURL', config.apiUrl);
+
   return (
     <div>
-      Counter: {state.count}
-      <br></br>
-      Name: {state.name}
+      <div>Count: {state.count}</div>
       <div>
-        <button onClick={() => dispatch({ type: "increment" })}>
-          Increment
-        </button>
-        <button
-          onClick={() => {
-            dispatch({ action: "decrement" }); // need to observe
-          }}
-        >
-          Decrement
-        </button>
-        <br></br>
-        <button
-          onClick={() => {
-            dispatch({ type: "reset" }); // this object key will be a property of action object inside reducer function
-          }}
-        >
-          Reset
-        </button>
-        <button
-          onClick={() => {
-            dispatch({ name: "update last name" });
-          }}
-        >
-          Name Reset
-        </button>
+        <span>
+          <button
+            onClick={() => {
+              dispatch({ type: 'increment' });
+            }}
+          >
+            {'Increment'}
+          </button>
+        </span>
+        <span>
+          <button
+            onClick={() => {
+              dispatch({ type: 'decrement' });
+            }}
+          >
+            {'Decrement'}
+          </button>
+        </span>
       </div>
     </div>
   );
