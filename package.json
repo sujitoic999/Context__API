@@ -16,9 +16,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "build:test": "env-cmd -f .env.test react-scripts build",
-    "build:prod": "env-cmd -f .env.production react-scripts build"
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": [
